@@ -127,10 +127,12 @@ void OpenGLDisplay::display()
 
 void OpenGLDisplay::init_landmarks()
 {
-        // random number generation
-    random_device random_device;
+    // random number generation
+    random_device rd;
     default_random_engine random_engine;
     uniform_real_distribution<> dice(0, 1);
+
+    random_engine.seed(rd());
 
     m_landmarks.resize(TOTAL_LANDMARKS);
 

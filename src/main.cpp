@@ -5,7 +5,7 @@ int main(int argc, char **argv)
 {
     OpenGLDisplay display;
 
-    display.main("EKF_localization", WORLD_WIDTH, WORLD_HEIGHT);
+    display.main("EKF_SLAM", WORLD_WIDTH, WORLD_HEIGHT);
 
 	return 0;
 }
