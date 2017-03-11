@@ -2,7 +2,7 @@ This is an implementation of the EKF SLAM with known data association algorithm 
 
 The simulation consists of a robot with a range sensor that can detect landmarks in the world. You move the robot around using the arrow keys.
 
-![EKF_SLAM](![ekf_slam](https://cloud.githubusercontent.com/assets/1471705/23823871/a291bbde-06bf-11e7-8d3b-7cf49543fc94.png))
+![EKF_SLAM](https://cloud.githubusercontent.com/assets/1471705/23823871/a291bbde-06bf-11e7-8d3b-7cf49543fc94.png)
 
 ###Requirements
 This demo code requires the following libraries
