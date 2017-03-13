@@ -54,7 +54,7 @@ void EKF_SLAM::update(double v, double w, const std::vector<Sensor> &sensors, do
     Matrix<double, 3, 2> V; // Jacobian (motion noise / state variable)
     Matrix<double, 3, 3> R; // motion noise with Jacobian applied
     Matrix<double, 2, 2> M = Matrix<double, 2, 2>::Zero(); // motion noise
-    Matrix<double, 3, 3> Gx = Matrix<double, 3, 3>::Identity();// Jacobian (motion update / state variable)
+    Matrix<double, 3, 3> Gx = Matrix<double, 3, 3>::Identity(); // Jacobian (motion update / state variable)
     Matrix<double, 2, 2> Q = Matrix<double, 2, 2>::Zero(); // measurement noise
     Matrix<double, 2, 1> Z; // sensor measurement
     Matrix<double, 2, 1> Zhat; // expected sensor measurement

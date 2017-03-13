@@ -9,7 +9,7 @@ find_package(Eigen3 REQUIRED)
 
 add_executable(EKF_localization_known_correspondences
     src/main.cpp
-    src/EKF_localization.cpp
+    src/EKF_SLAM.cpp
     src/robot.cpp
     src/opengl_display.cpp    
 )
