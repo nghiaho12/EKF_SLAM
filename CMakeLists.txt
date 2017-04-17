@@ -4,7 +4,15 @@ project(ekf_localization_known_correspondences)
 set(CMAKE_CXX_FLAGS "-std=c++11 -O2 ${CMAKE_CXX_FLAGS}")
 
 find_package(OpenGL REQUIRED)
+
 find_package(SDL2 REQUIRED)
+# Strip 'SDL2' from the end of the directory, to allow proper namespacing of
+# SDL2 include paths.
+string(REGEX REPLACE "/SDL2$"
+       "" SDL2_INCLUDE_DIRS
+       "${SDL2_INCLUDE_DIRS}")
+
+
 find_package(Eigen3 REQUIRED)
 
 add_executable(EKF_localization_known_correspondences
@@ -14,7 +22,12 @@ add_executable(EKF_localization_known_correspondences
     src/opengl_display.cpp    
 )
 
-include_directories(EIGEN3_INCLUDE_DIR)
-include_directories(/usr/include/eigen3)
+target_include_directories(EKF_localization_known_correspondences
+  PRIVATE
+  ${EIGEN3_INCLUDE_DIRS}
+  ${SDL2_INCLUDE_DIRS})
 
-target_link_libraries(EKF_localization_known_correspondences ${SDL2_LIBRARIES} ${OPENGL_LIBRARIES})
+target_link_libraries(EKF_localization_known_correspondences
+  PRIVATE
+  ${SDL2_LIBRARIES}
+  ${OPENGL_LIBRARIES})
